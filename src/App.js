@@ -42,8 +42,10 @@ function App() {
     setLightColor('green');
   }
 
-  function handleAddVehicle() {
+  function handleAddVehicle(vehicle) {
+    vehicleParade.push(vehicle);
 
+    setVehicleParade([...vehicleParade]);
   }
 
 
@@ -89,13 +91,13 @@ function App() {
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button>Car</button>
+        <button onClick={()=>handleAddVehicle('car')}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
-        <button>Bus</button>
+        <button onClick={()=>handleAddVehicle('bus')}>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
-        <button>Truck</button>
+        <button onClick={()=>handleAddVehicle('truck')}>Truck</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'motorcycle' to the end */}
-        <button>Motorcycle</button>
+        <button onClick={()=>handleAddVehicle('motorcycle')}>Motorcycle</button>
       </div>
 
     </div>
